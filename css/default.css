@@ -1,14 +1,144 @@
 ﻿body {
+	
 }
 
 @media screen and (-ms-view-state: fullscreen-landscape) {
+	div.main {
+		display: -ms-grid;
+		-ms-grid-columns: 160px auto 100px;
+	}
+	table {
+		-ms-grid-column: 2;	
+	}
+	input[type="text"] { 
+		font-size: 72px;
+		width: 250px;
+	}
+	td {
+		font-size: 72px;
+	}
+	button {
+		font-size: 72px;
+	}
+	tr.result {
+		border-top-width: 5px;
+		border-top-color: white;
+		border-top: double;
+	}
+	select {
+		font-size: 72px;	
+	}
 }
 
 @media screen and (-ms-view-state: filled) {
+	div.main {
+		display: -ms-grid;
+		-ms-grid-columns: 100px auto 100px;
+	}
+	table {
+		-ms-grid-column: 2;	
+	}
+	input[type="text"] { 
+		font-size: 56px;
+		width: 250px;
+	}
+	td {
+		font-size: 56px;
+	}
+	button {
+		font-size: 56px;
+	}
+	tr.result {
+		border-top-width: 5px;
+		border-top-color: white;
+		border-top: double;
+	}
+	select {
+		font-size: 56px;	
+	}
 }
 
+
 @media screen and (-ms-view-state: snapped) {
+	div.main {
+		display: -ms-grid;
+		-ms-grid-columns: 10px auto 10px;
+	}
+	table {
+		-ms-grid-column: 2;	
+	}
+	input[type="text"] { 
+		font-size: 24px;
+		width: 130px;
+	}
+	td {
+		font-size: 24px;
+	}
+	button {
+		font-size: 24px;
+	}
+	tr.result {
+		border-top-width: 5px;
+		border-top-color: white;
+		border-top: double;
+	}
+	select {
+		font-size: 20px;	
+	}
 }
 
 @media screen and (-ms-view-state: fullscreen-portrait) {
+	div.main {
+		display: -ms-grid;
+		-ms-grid-columns: 10px auto 10px;
+	}
+	table {
+		-ms-grid-column: 2;	
+	}
+	input[type="text"] { 
+		font-size: 56px;
+		width: 250px;
+	}
+	td {
+		font-size: 56px;
+	}
+	button {
+		font-size: 56px;
+	}
+	tr.result {
+		border-top-width: 5px;
+		border-top-color: white;
+		border-top: double;
+	}
+	select {
+		font-size: 56px;	
+	}
+}
+
+@media screen and (device-width: 1024px) and (device-height: 768px) {
+	div.main {
+		display: -ms-grid;
+		-ms-grid-columns: 10px auto 10px;
+	}
+	table {
+		-ms-grid-column: 2;	
+	}
+	input[type="text"] { 
+		font-size: 56px;
+		width: 250px;
+	}
+	td {
+		font-size: 56px;
+	}
+	button {
+		font-size: 56px;
+	}
+	tr.result {
+		border-top-width: 5px;
+		border-top-color: white;
+		border-top: double;
+	}
+	select {
+		font-size: 56px;	
+	}
 }
