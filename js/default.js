@@ -1,5 +1,7 @@
-﻿// For an introduction to the Blank template, see the following documentation:
-// http://go.microsoft.com/fwlink/?LinkId=232509
+﻿//TODO: add background image
+//TODO: test screen configurations
+//TODO: test calculations
+//TODO: trim result to 4 decimal places
 (function () {
     "use strict";
 
@@ -10,17 +12,32 @@
 
     var $original = null;
     var $final = null;
-    var $temperature = null;
+    var $ogTemperature = null;
+    var $fgTemperature = null;
     var $calibration = null;
     var $result = null;
+    var $calcButton = null;
 
     var onCalcClick = function (e) {
-        $result.val(131 * (parseFloat($original.val(), 10) - parseFloat($final.val(), 10)));
+        //equation taken from http://www.brewmorebeer.com/calculate-percent-alcohol-in-beer/
+        var og = parseFloat($original.val(), 10);
+        var ogAdjusted = og + (($ogTemperature.val() - $calibration.val()) * .001);
+
+        var fg = parseFloat($final.val(), 10);
+        var fgAdjusted = fg + (($fgTemperature.val() - $calibration.val()) * .001);
+
+        var abv = ((1.05 * (ogAdjusted - fgAdjusted)) / fgAdjusted) / 0.79 * 100;
+
+        $result.val(abv);
     };
 
     var setupDropDowns = function () {
-        for (var i = 59; i <= 90; i++) {
-            $temperature.append($("<option></option>")
+        for (var i = 50; i <= 99; i++) {
+            $ogTemperature.append($("<option></option>")
+                .attr("value", i)
+                .text(i));
+
+            $fgTemperature.append($("<option></option>")
                 .attr("value", i)
                 .text(i));
 
@@ -28,6 +45,10 @@
                 .attr("value", i)
                 .text(i));
         }
+
+        $ogTemperature.val(60);
+        $fgTemperature.val(60);
+        $calibration.val(60);
     };
 
     app.onactivated = function (args) {
@@ -38,11 +59,13 @@
 
                 $original = $("#original");
                 $final = $("#final");
-                $temperature = $("#temperature");
+                $ogTemperature = $("#ogTemperature");
+                $fgTemperature = $("#fgTemperature");
                 $calibration = $("#calibration");
                 $result = $("#result");
+                $calcButton = $("#calc");
 
-                $("#calc").on("click", onCalcClick);
+                $calcButton.on("click", onCalcClick);
 
                 setupDropDowns();
             } else {
