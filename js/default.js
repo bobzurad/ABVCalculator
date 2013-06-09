@@ -1,7 +1,4 @@
-﻿//TODO: add background image
-//TODO: add icons
-//TODO: test screen configurations
-(function () {
+﻿(function () {
     "use strict";
 
     WinJS.Binding.optimizeBindingReferences = true;
@@ -20,10 +17,10 @@
     var onCalcClick = function (e) {
         //equation taken from http://www.brewmorebeer.com/calculate-percent-alcohol-in-beer/
         var og = $original.val() == "" ? 1.052 : parseFloat($original.val(), 10);
-        var ogAdjusted = og + (($ogTemperature.val() - $calibration.val()) * .001);
+        var ogAdjusted = og + (($ogTemperature.val() - $calibration.val()) * 0.001);
 
         var fg = $final.val() == "" ? 1.014 : parseFloat($final.val(), 10);
-        var fgAdjusted = fg + (($fgTemperature.val() - $calibration.val()) * .001);
+        var fgAdjusted = fg + (($fgTemperature.val() - $calibration.val()) * 0.001);
 
         var abv = ((1.05 * (ogAdjusted - fgAdjusted)) / fgAdjusted) / 0.79 * 100;
 
