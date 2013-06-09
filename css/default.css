@@ -1,5 +1,5 @@
 ﻿body {
-	
+    background: url('/images/beerbackground3.jpg') #A98436 no-repeat left top;
 }
 
 @media screen and (-ms-view-state: fullscreen-landscape) {
@@ -60,6 +60,10 @@
 
 
 @media screen and (-ms-view-state: snapped) {
+    body {
+        background: url('/images/beerbackground-snapped.jpg') #A98436 no-repeat left top;
+    }
+
 	div.main {
 		display: -ms-grid;
 		-ms-grid-columns: 10px auto 10px;
