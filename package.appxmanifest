@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="10419BobZurad.ABVCalculator" Version="1.0.0.2" Publisher="CN=EC39BE2F-2910-4084-8019-1883FAC50E9C" />
+  <Identity Name="10419BobZurad.ABVCalculator" Version="1.0.0.4" Publisher="CN=EC39BE2F-2910-4084-8019-1883FAC50E9C" />
   <Properties>
     <DisplayName>ABV Calculator</DisplayName>
     <PublisherDisplayName>Bob Zurad</PublisherDisplayName>
@@ -21,7 +21,4 @@
       </VisualElements>
     </Application>
   </Applications>
-  <Capabilities>
-    <Capability Name="internetClient" />
-  </Capabilities>
 </Package>
